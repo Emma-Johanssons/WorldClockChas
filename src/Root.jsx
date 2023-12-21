@@ -1,23 +1,21 @@
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router";
+import earth from "/src/earth.jpg";
 
 export default function Root() {
   return (
-    <div>
-      <nav className="flex justify-between p-8 bg-blue-400 items-center">
+    <div
+      className="relative bg-cover bg-center h-screen"
+      style={{ backgroundImage: `url(${earth})` }}
+    >
+      <nav className="absolute top-0 left-0 right-0 p-8  flex justify-between items-center">
         <h1 className="text-4xl font-extrabold text-white">
-          <Link to={"/"}>World Time</Link>
+          <Link className="text-sky-100" to={"/"}>
+            World Clock
+          </Link>
         </h1>
-        <ul className="flex space-x-4">
-          <li className=" hover:text-white">
-            <Link to={"/about"}>About</Link>
-          </li>
-          <li className=" hover:text-white">
-            <Link to={"/contact"}>Contact</Link>
-          </li>
-        </ul>
       </nav>
-      <main>
+      <main className="flex flex-col items-center justify-center h-full">
         <Outlet />
       </main>
     </div>

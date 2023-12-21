@@ -5,8 +5,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import SingleClock from "./SingleClock";
 import Root from "./Root";
 import Home from "./Home";
-import About from "./About";
-import Contact from "./Contact";
 
 const router = createBrowserRouter([
   {
@@ -18,15 +16,8 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "about",
-        element: <About />,
-      },
-      {
-        path: "contact",
-        element: <Contact />,
-      },
-      {
-        path: "clock/:cityKey",
+        // Add a forward slash at the beginning of the path
+        path: "/single-clock/:timeZone",
         element: <SingleClock />,
       },
     ],
